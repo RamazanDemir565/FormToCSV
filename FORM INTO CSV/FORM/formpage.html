@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <?php include 'handler.php';?>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Reusable Contact Form Using Bootstrap And PHP - reusable form</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" >
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="form.css" >
+        <script src="form.js"></script>
+    </head>
+    <body background="about.jpg">
+        <div class="container">
+
+            <div class="row">
+                <h2>Generate CSV file - Genereer een CSV file met hieronder geleverde input.</h2>
+
+                <div class="col-sm-6">
+
+
+                    <form role="form" method="post" id="reused_form" >
+
+                        <div class="form-group">
+                            <label for="voornaam" name="rows[0][]"> Voornaam:</label>
+                            <input type="text" class="form-control" id="voornaam" name="[1][]" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="achternaam"> Achternaam:</label>
+                            <input type="text" class="form-control" id="achternaam" name="achternaam" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="functie"> Functie:</label>
+                            <input type="text" class="form-control" id="functie" name="functie" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="geboortedatum"> Geboortedatum:</label><br>
+                            <input type="date" name="geboortedatum" id="geboortedatum" name="geboortedatum">
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <label for="wiebenik"> Wie ben ik:</label>
+                            <textarea class="form-control" type="textarea" name="message" id="wiebenik"  maxlength="6000" rows="7"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="educatie"> Educatie:</label><br>
+                            <input type="text" name="educatie" id="educatie" name="educatie" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="skills"> Technical skills:</label><br>
+                            <input type="text" name="skills" id="skills" name="skills" required maxlength="50">
+                        </div>
+                        <div class="form-group">
+                            <label for="talen"> Talen:</label><br>
+                            <input type="checkbox" name="talen" id="talen" value="Nederlands"><p>Nederlands</p>
+                            <input type="checkbox" name="talen" id="talen2" value="Frans">Frans<br>
+                            <input type="checkbox" name="talen" id="talen3" value="Engels">Engels<br>
+                            <input type="checkbox" name="talen" id="talen4" value="Duits">Duits<br>
+                            <input type="checkbox" name="talen" id="talen5" value="Andere">Andere<br>
+                        </div>
+
+                    </form>
+                    <div id="success_message" style="width:100%; height:100%; display:none; "> <h3>Sent your message successfully!</h3> </div>
+                    <div id="error_message" style="width:100%; height:100%; display:none; "> <h3>Error</h3> Sorry there was an error sending your form. </div>
+                </div>
+
+
+                <div class="col-sm-6">
+                    <form role="form" method="post" id="reused_form2" >
+
+                    <div class="form-group">
+                        <label for="ref1"> Referentie project 1:</label>
+                        <p>Bedrijfsnaam:</p><input type="text" name="bedrijfsnaam" id="ref1" name="bedrijfsnaam" required maxlength="50">
+                        <p>Periode:</p><input type="text" name="periode" id="periode" name="periode" required maxlength="50">
+                        <p>Beschrijving:</p><textarea class="form-control" type="textarea" name="message" id="message"  maxlength="6000" rows="7"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-lg btn-success pull-right" id="btnContactUs">Generate CSV</button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
